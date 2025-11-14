@@ -55,7 +55,7 @@ class Main:
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH + 1 , HEIGHT + 1))
         self.clock = pygame.time.Clock()
-        self.running = False
+        self.running = True
         self.balls = [Ball() , Ball() , Ball() , Ball() , Ball() , Ball()]
 
     def run(self):
@@ -65,7 +65,7 @@ class Main:
             
             self.draw()
             pygame.display.flip()
-            # self.clock.tick(FPS)
+            self.clock.tick(FPS)
         
 
     def update(self):
@@ -77,16 +77,12 @@ class Main:
         global LOWEST_GRID
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                exit()
+                self.running = False
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_d:
                     LOWEST_GRID = min(LOWEST_GRID*2 , 16)
                 if event.key == pygame.K_a:
                     LOWEST_GRID = max(LOWEST_GRID//2, 1)
-
-                if event.key == pygame.K_RETURN:
-                    self.running = True
-                    self.run()
 
 
 
@@ -160,30 +156,13 @@ class Main:
 
 
 
-    def home_screen(self):
-        '''
-        Draw a simple home screen with text showing the intructions to speed up and down
-        '''
-        while not self.running:
-            self.screen.fill((255, 255, 255))
-            font = pygame.font.SysFont('Arial', 30)
-            text = font.render("Press 'd' and 'a' to increase and decrease no of grid size", True, (0, 0, 0))
-            text2 = font.render("Press ENTER TO START", True, (0, 0, 0))
-
-            self.screen.blit(text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 2 - text.get_height() // 2))
-            self.screen.blit(text2, (WIDTH // 2 - text2.get_width() // 2, HEIGHT // 2 - text2.get_height() // 2 + 50))
-            pygame.display.flip()
-            self.events()
-            
-
-
 '''
 main function
 '''
 
 def main():
     main = Main()
-    main.home_screen()
+    main.run()
 
 
 

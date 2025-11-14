@@ -9,7 +9,7 @@ Constants
 '''
 WIDTH = 1200
 HEIGHT = 800
-FPS = 1
+FPS = 30
 THREADS = 100
 CELL = 1
 
@@ -68,7 +68,7 @@ class Main:
             for t in ts:
                 t.join()
             pygame.display.flip()
-            # self.clock.tick(FPS)
+            self.clock.tick(FPS)
         
 
     def update(self):
