@@ -19,10 +19,54 @@
 
     <main>
         <div class="controls">
-            <div class="control-group">
-                <label for="gridSlider">Minimum Grid Size: <span id="gridValue">2</span></label>
-                <input type="range" id="gridSlider" min="2" max="16" value="2" step="2">
-                <p class="control-hint">Smallest grid cell size for maximum detail (even numbers only)</p>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <strong>FPS:</strong> <span id="fpsDisplay">60</span>
+                </div>
+                <div class="stat-item">
+                    <button id="pauseBtn" class="control-btn">Pause</button>
+                </div>
+            </div>
+
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="gridSlider">Minimum Grid Size: <span id="gridValue">2</span></label>
+                    <input type="range" id="gridSlider" min="2" max="16" value="2" step="2">
+                </div>
+
+                <div class="control-group">
+                    <label for="ballSlider">Ball Count: <span id="ballValue">5</span></label>
+                    <input type="range" id="ballSlider" min="1" max="15" value="5" step="1">
+                </div>
+            </div>
+
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="speedSlider">Speed: <span id="speedValue">1.0x</span></label>
+                    <input type="range" id="speedSlider" min="0.1" max="3" value="1" step="0.1">
+                </div>
+
+                <div class="control-group">
+                    <label for="colorSelect">Color Scheme:</label>
+                    <select id="colorSelect">
+                        <option value="white" selected>White</option>
+                        <option value="cyan">Cyan</option>
+                        <option value="magenta">Magenta</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="green">Green</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-row">
+                <div class="control-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="fillCheck">
+                        Filled Mode
+                    </label>
+                </div>
             </div>
         </div>
 
@@ -31,11 +75,16 @@
         <div class="info">
             <h2>Optimization Technique</h2>
             <p>This version uses recursive subdivision to adaptively refine the grid only where needed. Instead of evaluating every small cell, it starts with a coarse grid and subdivides only regions with interesting features, significantly improving performance.</p>
+            <h3>Features</h3>
             <ul>
-                <li>5 animated metaballs with higher velocity</li>
-                <li>Adaptive grid subdivision for better performance</li>
-                <li>Finer detail where metaballs interact</li>
-                <li>Real-time performance metrics displayed on canvas</li>
+                <li>Adaptive grid subdivision for optimal performance</li>
+                <li>Dynamic ball count (1-15 metaballs)</li>
+                <li>Variable animation speed (0.1x - 3x)</li>
+                <li>Seven color schemes to choose from</li>
+                <li>Pause/play controls for analysis</li>
+                <li>Filled mode for solid rendering</li>
+                <li>Real-time FPS monitoring</li>
+                <li>Recursive refinement only where needed</li>
             </ul>
         </div>
     </main>

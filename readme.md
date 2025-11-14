@@ -8,6 +8,12 @@ An interactive visualization of the marching squares algorithm through animated 
 
 - Modern, responsive web interface with interactive controls
 - Real-time parameter adjustment with visual feedback
+- Pause/play controls for frame-by-frame analysis
+- Variable animation speed (0.1x - 3x)
+- Dynamic ball count adjustment (1-20 metaballs)
+- Seven color schemes (white, cyan, magenta, yellow, green, red, blue)
+- Filled mode for solid rendering
+- Live FPS monitoring
 - Multiple implementation approaches for comparison
 - Clean, documented code with proper error handling
 - Cross-platform compatibility (Python and JavaScript)
@@ -157,13 +163,22 @@ python optimized_marching_squares.py
 ## Controls
 
 ### JavaScript (Web)
-- **Slider**: Adjust grid resolution in real-time
-- Values update automatically with visual feedback
+
+**Playback Controls:**
+- **Pause/Play Button**: Pause animation for detailed analysis
+- **FPS Display**: Live frame rate monitoring
+
+**Visual Controls:**
+- **Grid Size Slider**: Adjust grid resolution (2-20 for standard, 2-16 for optimized)
+- **Ball Count Slider**: Add or remove metaballs dynamically (1-20 for standard, 1-15 for optimized)
+- **Speed Slider**: Control animation speed from 0.1x to 3x
+- **Color Scheme Dropdown**: Choose from 7 color options
+- **Filled Mode Checkbox**: Toggle between outline and filled rendering
 
 ### Python (Desktop)
 - **Optimized version only**:
-  - `D` key: Increase minimum grid size
-  - `A` key: Decrease minimum grid size
+  - `D` key: Increase minimum grid size (faster, less detail)
+  - `A` key: Decrease minimum grid size (slower, more detail)
   - Close window to exit
 
 ## Technical Details
@@ -192,11 +207,18 @@ python optimized_marching_squares.py
 
 ### UI/UX Improvements
 
-- Modern, gradient-based color schemes
+- Modern, gradient-based color schemes for backgrounds
 - Responsive design that works on different screen sizes
-- Clear, accessible controls with real-time feedback
+- Interactive controls with immediate visual feedback
+- Pause/play functionality for analysis and screenshots
+- Real-time FPS counter for performance monitoring
+- Dynamic ball count adjustment without restart
+- Variable speed control for slow-motion or fast playback
+- Seven color palettes for visual variety
+- Filled mode option for different visual styles
 - Comprehensive documentation directly in the interface
 - Professional typography and spacing
+- Mobile-friendly responsive controls
 
 ## Browser Compatibility
 
