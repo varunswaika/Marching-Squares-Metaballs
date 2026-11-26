@@ -1,5 +1,7 @@
 # Metaballs with Marching Squares
 
+> **Archived.** Superseded by [visual-algorithms](https://github.com/VarunAgarwalOfficial/visual-algorithms), which includes the marching squares and metaballs demos. This repository is kept as a record and is read-only.
+
 Moving metaballs drawn as outlines using the marching squares algorithm, written in Python with Pygame and in JavaScript with p5.js. Python has three versions (per-pixel, standard marching squares and an adaptive version); JavaScript has the standard and adaptive ones.
 
 ![Adaptive marching squares in Python (Pygame)](screenshots/1.gif)
